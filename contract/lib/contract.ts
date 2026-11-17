@@ -3,9 +3,9 @@ import { ethers } from "ethers";
 import { getProvider, getSigner } from "./web3";
 import vaultArtifacts from  "@/contract/out/vault.sol/vault.json";
 
-const contractAddress = (process.env.NEXT_PUBLIC_VAULT_ADDRESS || "0x6a15f0e91b97e9f3e7b6627e5d86e2bea7c4842f")!;
+const contractAddress = process.env.NEXT_PUBLIC_VAULT_ADDRESS || "0x6a15f0e91b97e9f3e7b6627e5d86e2bea7c4842f";
 const SEPOLIA_CHAIN_ID = 11155111;
-const  provider = new ethers.JsonRpcProvider((process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL || "https://infura.io"));
+const  provider = new ethers.JsonRpcProvider(process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL || "https://infura.io");
 
 // Read-only contract
 export function getVaultReadContract(){
